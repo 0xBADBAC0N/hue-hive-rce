@@ -18,9 +18,9 @@ select * from workspace_hs.out;
 ![alt text](screen-2020-04-28-11-20-20.png "Usage example")
 
 ### Impact
-Depending on the user (`hive` or worst case `root`) we can at least save and run script inside the datacenter from `/tmp`.
+Depending on the user (`hive` or worst case `root`) we can at least save and run scripts inside the datacenter from `/tmp`.
 Therefore we can use that server as base for future attacks in the whole environment, checking the local server (`ss -tulpn`,`ps auxf`, enumeration...) or watching for other server.
 Often internal Big Data systems are not fully protected because they are setup insecure by default.
 These allows us to read configurations (potential credentials etc) from the Apache ResourceManage, Apache ZooKepe, etc.
-As these BigData stack offers many APIs, we can submit MapRed Jobs, executed on HDFS, connect to Apache Kafka or many other options.
+As these BigData stack offer many APIs. We can submit MapRed Jobs, executed on HDFS, connect to Apache Kafka or many other options.
 If we should not be `root`, we often can easly to escalate to `root` e.G. with [logrotten](https://github.com/whotwagner/logrotten).
